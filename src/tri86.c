@@ -320,6 +320,7 @@ int main( void ) {
 					case MODE_CO_DH:
 					case MODE_CO_BL:
 					case MODE_CO_BH:
+						break;
 					default:
 						command.current = 0.0;
 						command.rpm = 0.0;
