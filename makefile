@@ -1,7 +1,7 @@
 PROJECT_NAME = tri86
 SOURCE_PATH = src/
 INCLUDE_PATH = include/
-OUTPUT_PATH = build/
+OUTPUT_PATH = build
 
 SOURCES = $(wildcard $(SOURCE_PATH)*.c)
 OBJECTS = $(patsubst %.c, %.o,$(SOURCES) )
@@ -17,7 +17,7 @@ LDFLAGS = -mmcu=$(CPU) -Wl,-Map=$(OUTPUT_PATH)$*.map
 all: $(PROJECT_NAME).deps $(PROJECT_NAME).a43 $(PROJECT_NAME).lst $(PROJECT_NAME).tsf
 
 %.deps:
-	if not exist $(OUTPUT_PATH) mkdir $(OUTPUT_PATH)
+	mkdir -m a=rwx $(OUTPUT_PATH)
 	@echo rm -f $(OUTPUT_PATH)$@
 	$(CC) -MM $(CFLAGS) $(SOURCES) > $(OUTPUT_PATH)$@
 

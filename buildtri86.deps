@@ -1,0 +1,6 @@
+can.o: src/can.c include/tri86.h include/can.h include/usci.h
+gauge.o: src/gauge.c include/tri86.h include/gauge.h
+pedal.o: src/pedal.c include/tri86.h include/pedal.h
+tri86.o: src/tri86.c include/tri86.h include/can.h include/usci.h \
+  include/pedal.h include/gauge.h
+usci.o: src/usci.c include/tri86.h include/usci.h
